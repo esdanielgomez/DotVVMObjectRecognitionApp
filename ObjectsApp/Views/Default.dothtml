@@ -1,0 +1,124 @@
+﻿@viewModel ObjectsApp.ViewModels.DefaultViewModel, ObjectsApp
+@masterPage Views/MasterPage.dotmaster
+@js camera-module
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <dot:NamedCommand Name="ImageFileResult" Command="{staticCommand: (string file) => _root.ImageInput = file}" />
+
+    <div class="content">
+        <!-- Side Menu -->
+        <div class="hidden-xs sidebar">
+            <div class="logo">
+                <a href="https://dotvvm.com">
+                    <img src="~/Resources/dotvvm_logo.png">
+                </a>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <div class="main-dish">
+
+            <!-- Heading -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <h3 style="color: #1B3A87;" align="center"><b>OBJECT RECOGNITION - AZURE AI CUSTOM VISION</b></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Take picture section -->
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <!-- Head title -->
+                        <div class="panel-heading" style="background-color: #E7EEFF;"><b>CAMERA</b></div>
+                        <!-- Web camera video -->
+                        <div class="panel-body" align="center">
+
+                            <!-- Camera section for JS -->
+                            <div id="my_camera"></div><br />
+
+                            <!-- Take picture option -->
+                            <dot:Button Text="Take Picture"
+                                        class="btn btn-success btn-lg btn-general"
+                                        Click="{staticCommand:_js.Invoke("take_snapshot");}" />
+
+                            <!-- Search image option -->
+                            <dot:FileUpload UploadedFiles="{value: Files}"
+                                            AllowMultipleFiles="false"
+                                            SuccessMessageText="Image uploaded successfully!!"
+                                            NumberOfFilesIndicatorText=""
+                                            UploadButtonText="Search Image"
+                                            AllowedFileTypes="jpg,png"
+                                            UploadCompleted="{command: SaveImage()}" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Captured photo section -->
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+
+                        <!-- Head title -->
+                        <div class="panel-heading" style="background-color: #E7EEFF;" align="center">
+                            <b>CAPTURED IMAGE</b>
+                            <dot:Button Text="Refresh" Click="{staticCommand:_js.Invoke("update_snapshot", ImageInput);}" />
+                        </div>
+
+                        <!-- Image section -->
+                        <div class="panel-body" align="center">
+                            <div id="results">
+                                Your captured image will appear here...
+                            </div>
+                            <br />
+                            <dot:Button Text="Analyze Image"
+                                        class="btn btn-success btn-lg btn-general"
+                                        Click="{command : Detect()}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Take picture section -->
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <!-- Head title -->
+                        <div class="panel-heading" style="background-color: #E7EEFF;"><b>RESULTS</b></div>
+                        <!-- Web camera video -->
+                        <div class="panel-body" align="center">
+                            <table style="width:100%" class="table table-bordered">
+                                <!-- Head table -->
+                                <tr>
+                                    <th align="center">Image <dot:Button Text="Show Image" Click="{staticCommand:_js.Invoke("get_final_image", ImageOutput);}" /></th>
+                                    <th align="center">Objects detected</th>
+                                </tr>
+                                <!-- Content table -->
+                                <tr>
+                                    <!-- Image -->
+                                    <td>
+                                        <div id="ImageResult"></div>
+                                    </td>
+                                    <!-- Objects -->
+                                    <td>
+                                        <dot:GridView DataSource="{value: Objects}" class="table table-bordered">
+                                            <Columns>
+                                                <dot:GridViewTextColumn ValueBinding="{value: TagName}" HeaderText="Object" />
+                                                <dot:GridViewTextColumn ValueBinding="{value: Probability}" HeaderText="Probability %" />
+                                            </Columns>
+                                        </dot:GridView>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Main End -->
+    </div> <!-- Body End -->
+</dot:Content>

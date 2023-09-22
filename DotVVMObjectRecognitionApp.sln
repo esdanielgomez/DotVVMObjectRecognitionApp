@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectsApp", "ObjectsApp\ObjectsApp.csproj", "{FFFE613E-FD54-4285-A9EF-709EA7374C68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIServices", "AIServices\AIServices.csproj", "{D69DCFCC-F26F-4076-9317-B4B98FDE297E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFFE613E-FD54-4285-A9EF-709EA7374C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFE613E-FD54-4285-A9EF-709EA7374C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFE613E-FD54-4285-A9EF-709EA7374C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFE613E-FD54-4285-A9EF-709EA7374C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69DCFCC-F26F-4076-9317-B4B98FDE297E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69DCFCC-F26F-4076-9317-B4B98FDE297E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69DCFCC-F26F-4076-9317-B4B98FDE297E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69DCFCC-F26F-4076-9317-B4B98FDE297E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD430876-806C-4455-B81B-E1444F5A8621}
+	EndGlobalSection
+EndGlobal
