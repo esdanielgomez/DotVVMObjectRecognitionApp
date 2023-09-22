@@ -9,6 +9,8 @@ In the following tutorials, we can review how to customize an Azure AI Custom Vi
 - [Azure Custom Vision: Object recognition in .NET application](https://dev.to/esdanielgomez/azure-custom-vision-object-recognition-in-net-application-3ekc)
 - [DotVVM Web Camera with JS Directive](https://dev.to/esdanielgomez/dotvvm-web-camera-with-js-directive-473h)
 
+![Azure AI Custom Vision](https://github.com/esdanielgomez/DotVVMObjectRecognitionApp/assets/20881117/e1656e1c-5772-4f5b-bde4-752a53d5d8cb)
+
 ## Autor
 
 Daniel Gomez
