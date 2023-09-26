@@ -1,7 +1,7 @@
 # Objects Recognition App
 Web application to recognize objects in images with ASP.NET, DotVVM, and Azure AI Custom Vision
 
-![Example](https://github.com/esdanielgomez/DotVVMObjectRecognitionApp/assets/20881117/3286f998-4d69-46c2-9323-e16c809f9df0)
+![Example](https://github.com/esdanielgomez/DotVVMObjectRecognitionApp/assets/20881117/2076cd56-76df-4d1c-a2ba-dde531268fd2)
 
 ## Related Tutorial Articles
 
